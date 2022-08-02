@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 import json
+import os
 
 def localCopy():
   raw_text = ""
@@ -51,9 +52,11 @@ def main():
   website = "https://sportsbook.draftkings.com/leagues/football/nfl"
   raw_text = retrieveWebsite(website, mode)
   data = executeRecipe(raw_text)
-
+  script_dir = os.path.dirname(__file__)
+  rel_path = f'data/{now}.json'
+  abs_file_path = os.path.join(script_dir, rel_path)
   # save file 
-  save2Json(f'app/data/{now}.json', data)
+  save2Json(abs_file_path, data)
 
 if __name__ == "__main__":
     main()
