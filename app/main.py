@@ -6,7 +6,10 @@ import os
 
 def localCopy():
   raw_text = ""
-  with open('app/development/draftkings_nfl.html', 'r') as localFile:
+  script_dir = os.path.dirname(__file__)
+  rel_path = f'development/draftkings_nfl.html'
+  abs_file_path = os.path.join(script_dir, rel_path)
+  with open(abs_file_path, 'r') as localFile:
     raw_text = localFile.read()
   return raw_text
 
