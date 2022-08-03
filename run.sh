@@ -1,5 +1,4 @@
 #!/bin/bash
 
-source env/bin/activate
+cd projects/rpi-scraper
 python app/main.py
-deactivate source
