@@ -62,4 +62,4 @@ def main():
   save2Json(abs_file_path, data)
 
 if __name__ == "__main__":
-    main()
+  main()
